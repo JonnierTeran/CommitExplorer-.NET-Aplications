@@ -2,6 +2,7 @@
 using CommitExplorerAplications.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace CommitExplorerAplications.Services
 {
@@ -15,13 +16,21 @@ namespace CommitExplorerAplications.Services
         /// </summary>
         private readonly HttpClient _httpClient;
 
+        // Token de acceso personal  a github
+        private readonly string _personalAccessToken;
+
 
         //Constructor del Servicio
         public CommitExplorerService()
         {
+
+            this._personalAccessToken = "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";
+
             _httpClient = new HttpClient();
 
             _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("TuApp"); // Agrega un encabezado User-Agent con el valor "TuApp"
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", _personalAccessToken); //Token de Autenticacion github
         }
 
 
