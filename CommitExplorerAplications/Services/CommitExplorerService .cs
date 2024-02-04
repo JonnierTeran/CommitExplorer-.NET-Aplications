@@ -24,13 +24,13 @@ namespace CommitExplorerAplications.Services
         public CommitExplorerService()
         {
 
-            this._personalAccessToken = "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";
+            //this._personalAccessToken = "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"; //Token de Acceso a github
 
             _httpClient = new HttpClient();
 
             _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("TuApp"); // Agrega un encabezado User-Agent con el valor "TuApp"
 
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", _personalAccessToken); //Token de Autenticacion github
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", _personalAccessToken); //Token de Autenticacion github
         }
 
 
