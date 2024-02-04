@@ -24,7 +24,7 @@ namespace CommitExplorerAplications.Services
         public CommitExplorerService()
         {
 
-            this._personalAccessToken = "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";
+            this._personalAccessToken = "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";
 
             _httpClient = new HttpClient();
 
