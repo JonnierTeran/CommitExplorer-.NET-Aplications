@@ -23,5 +23,5 @@
         public string received_events_url { get; set; } = string.Empty;
         public string type { get; set; } = string.Empty;
         public bool site_admin { get; set; }
-    }
+    }   
 }
