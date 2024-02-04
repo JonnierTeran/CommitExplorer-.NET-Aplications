@@ -129,7 +129,7 @@ namespace CommitExplorerAplications.Services
         }
 
         #endregion
-
+                          
 
         #region Metodos publicos
 
@@ -138,7 +138,7 @@ namespace CommitExplorerAplications.Services
         /// </summary>
         /// <param name="data"> Libreria y Semanas</param>
         /// <returns> Lista de los commits</returns>
-        public async Task<IActionResult> CommitsPorSemana(RequestCommits data)
+        public async Task<IActionResult> InfoRepositoriosPorSemana(RequestCommits data)
         {
             //Se crea un Arrays de Objetos que retornara el metodo
             List<ResponseCommits> responseData = new List<ResponseCommits>();
@@ -158,9 +158,16 @@ namespace CommitExplorerAplications.Services
                         ResponseCommits auxData = new ResponseCommits(); // Variable auxiliar para agregar a la lista
                         var full_name = Repo.items[i].full_name; // Se Obtiene la propiedad full_name que contiene nombre/Repositorio para el Endpoint de github
                         var info = await this.CommitsSemanales(full_name); //Por medio de un metodo asincrono se consultan los comits por semana de x repositorio
+
+
+                        //Validacion que la Data no sea null
+                        if (info.Data != null)
+                        {
                         auxData.infoRepo = info.Data;  // Se pasa la Data Obtenda (Cantidad de comits semanales) al objeto auxiliar
                         auxData.nameRepo = full_name; // Se pasa el nombre del Repositorio
                         responseData.Add(auxData); // Se agrega a la lista que se retornara como respuesta  
+
+                        }
                     }
 
                 }
