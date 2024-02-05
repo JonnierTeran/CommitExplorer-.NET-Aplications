@@ -17,7 +17,7 @@ namespace CommitExplorerAplications.Services
         private readonly HttpClient _httpClient;
 
         // Token de acceso personal  a github
-        private readonly string _personalAccessToken;
+       // private readonly string _personalAccessToken;
 
 
         //Constructor del Servicio
