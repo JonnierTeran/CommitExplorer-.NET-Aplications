@@ -16,7 +16,7 @@ namespace CommitExplorerAplications.Services
         /// </summary>
         private readonly HttpClient _httpClient;
 
-        // Token de acceso personal  a github
+        // Token de acceso personal  a github para cuando se cumpla el limite de uso publico de la api
        // private readonly string _personalAccessToken;
 
 
@@ -30,7 +30,7 @@ namespace CommitExplorerAplications.Services
 
             _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("TuApp"); // Agrega un encabezado User-Agent con el valor "TuApp"
 
-            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", _personalAccessToken); //Token de Autenticacion github
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", _personalAccessToken); //Token de Autenticacion github para cuando se cumpla el limite de uso publico de la api
         }
 
 
